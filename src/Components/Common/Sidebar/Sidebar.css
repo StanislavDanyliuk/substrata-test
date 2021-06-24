@@ -1,0 +1,18 @@
+nav {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    background-color: #394577;
+    height: 100vh;
+}
+
+nav ul {
+    list-style: none;
+}
+nav ul li{
+    padding: 1rem 0;
+}
+nav ul li a{
+    text-decoration: none;
+    color: inherit;
+}
