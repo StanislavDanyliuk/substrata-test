@@ -1,0 +1,13 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    color: #394577;
+    text-transform: initial;
+    font-weight: bold;
+}
+main div{
+    padding-bottom: 2rem;
+}

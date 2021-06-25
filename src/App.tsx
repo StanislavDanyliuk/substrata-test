@@ -1,19 +1,21 @@
 import React, {FC} from 'react';
-import Header from "./Components/Common/Header";
-import Sidebar from "./Components/Common/Sidebar";
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import WalletPage from "./Pages/WalletPage";
+import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
+import {sidebarMenuItems} from "./utils/constants";
+import withMainLayout from "./Components/HOC/withMainLayout";
 
 const App: FC = () => {
     return (
         <div className="App">
             <Router>
                 <Switch>
-                    <Header/>
-                    <Sidebar/>
-                    <Route path={'/wallet'} exact>
-                        <WalletPage/>
-                    </Route>
+                    {sidebarMenuItems.map(({label, path, page}) => {
+                        return (
+                            <Route key={label} path={path} exact={true}>
+                                {withMainLayout(page)}
+                            </Route>
+                        )
+                    })}
+                    <Redirect to={'/wallet'}/>
                 </Switch>
             </Router>
         </div>

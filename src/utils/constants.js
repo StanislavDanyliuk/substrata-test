@@ -7,21 +7,21 @@ export const sidebarMenuItems = [
     {
         label: 'My wallet',
         path: '/wallet',
-        component: <WalletPage/>
+        page: <WalletPage/>
     },
     {
         label: 'Buy Bitcoin',
         path: '/buy',
-        component: <BuyPage/>
+        page: <BuyPage/>
     },
     {
         label: 'Sell Bitcoin',
         path: '/sell',
-        component: <SellPage/>
+        page: <SellPage/>
     },
     {
         label: 'Bitcoin Price',
         path: '/bitcoin',
-        component: <PricePage/>
+        page: <PricePage/>
     },
 ]
