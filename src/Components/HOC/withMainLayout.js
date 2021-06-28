@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from "../Common/Header";
 import Sidebar from "../Common/Sidebar";
+import HistoryBar from "../Common/HistoryBar";
 
 const withMainLayout = (children) => {
     return (
@@ -9,6 +10,7 @@ const withMainLayout = (children) => {
             <div className='content'>
                 <Sidebar/>
                 <main>{children}</main>
+                <HistoryBar/>
             </div>
         </>
     );

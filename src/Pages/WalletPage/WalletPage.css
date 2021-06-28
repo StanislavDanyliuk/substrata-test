@@ -7,7 +7,6 @@ main {
     color: #394577;
     text-transform: initial;
     font-weight: bold;
+    margin-bottom: 200px;
 }
-main div{
-    padding-bottom: 2rem;
-}
+

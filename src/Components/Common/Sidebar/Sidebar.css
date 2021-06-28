@@ -9,10 +9,16 @@ nav {
 nav ul {
     list-style: none;
 }
-nav ul li{
+
+nav ul li {
     padding: 1rem 0;
 }
-nav ul li a{
+
+nav ul li a {
     text-decoration: none;
     color: inherit;
+}
+
+nav ul li a img {
+    margin-right: 1rem;
 }

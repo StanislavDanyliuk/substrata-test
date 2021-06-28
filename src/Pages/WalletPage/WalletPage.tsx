@@ -1,23 +1,23 @@
 import React from 'react';
+import Button from "../../Components/Common/Button";
+
 import './WalletPage.css'
 
 const WalletPage = () => {
     return (
         <>
-            <div>
+            <p>
                 Your Bitcoin Wallet
-            </div>
-            <div>
+            </p>
+            <p>
                 You now own 7 Bitcoins
-            </div>
-            <div>
-                Your Bitcoin Wallet
-            </div>
-            <button>1</button>
-            <button>2</button>
+            </p>
+            {/*@ts-ignore*/}
+            <Button label={'Deposit 100$'} event={() => alert('Deposit 100$')}/>
+            {/*@ts-ignore*/}
+            <Button label={'Withdraw 100$'} event={() => alert('Withdraw 100$')}/>
         </>
-    )
-        ;
+    );
 };
 
 export default WalletPage;
