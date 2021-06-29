@@ -26,11 +26,3 @@ export const sidebarMenuItems = [
     },
 ]
 
-
-
-export const historyActions = [
-    {
-        date: new Date(Date.now()).toLocaleString(),
-        actionType: 'Purchased 1 Bitcoin'
-    },
-]

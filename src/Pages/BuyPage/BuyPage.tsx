@@ -1,22 +1,27 @@
 import React from 'react';
 import Button from "../../Components/Common/Button";
+import {RootStateOrAny, useDispatch, useSelector} from "react-redux";
+import {buy} from "../../store/reducers/reducers";
 
 import './BuyPage.css'
 
 const BuyPage = () => {
+    const price = useSelector((state: RootStateOrAny) => state.price.value)
+    const dispatch = useDispatch()
+
+    const warningMessage = price >= 10000 ? 'Prices are high, are you sure that you want to buy?' : 'Prices are low,buy more!'
+
+
     return (
         <>
             <p>
-                Bitcoin price is 1000$
+                Bitcoin price is {price}$
             </p>
             <p>
-                Price are low, buy more!
-            </p>
-            <p>
-                Prices are high, are you sure that you want to buy?
+                {warningMessage}
             </p>
             {/*@ts-ignore*/}
-            <Button label={'Buy 1 Bitcoin'} event={() => alert('Buy 1 Bitcoin')}/>
+            <Button label={'Buy 1 Bitcoin'} event={() => dispatch(buy())}/>
         </>
     );
 };

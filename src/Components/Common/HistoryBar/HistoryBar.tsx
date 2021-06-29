@@ -1,11 +1,15 @@
 import React, {FC} from 'react';
 
+
 import './HistoryBar.css'
-import {historyActions} from "../../../utils/constants";
+import {RootStateOrAny, useSelector} from "react-redux";
 
 const HistoryBar: FC = () => {
+    const historyActions = useSelector((state: RootStateOrAny) => state.history)
     return (
         <aside>
+            {/*@ts-ignore*/}
+            {/*@ts-ignore*/}
             {historyActions.map(({date, actionType}) => {
                 return (
                     <div key={Math.random()}>
