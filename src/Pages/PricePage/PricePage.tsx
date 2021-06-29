@@ -27,10 +27,10 @@ const PricePage = () => {
             </p>
             <div>
                 {/*@ts-ignore*/}
-                <Button name={'increment'} label={'Increase Bitcoin Price (+1,000)'}
+                <Button name={'increment'} label={'Increased Bitcoin Price (+1,000)'}
                         event={(e: any) => handleDispatch(e.target)}/>
                 {/*@ts-ignore*/}
-                <Button name={'decrement'} label={'Decrease Bitcoin Price (-1,000)'}
+                <Button name={'decrement'} label={'Decreased Bitcoin Price (-1,000)'}
                         event={(e: any) => handleDispatch(e.target)}/>
             </div>
         </>
