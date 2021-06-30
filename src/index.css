@@ -21,3 +21,8 @@ body {
     display: flex;
 }
 
+.warning {
+    color: indianred;
+    text-decoration: underline;
+}
+

@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from "../../Components/Common/Button";
-import {RootStateOrAny, useDispatch, useSelector} from "react-redux";
+import {batch, RootStateOrAny, useDispatch, useSelector} from "react-redux";
 import {addToHistory, buy} from "../../store/reducers/reducers";
 
 import './BuyPage.css'
@@ -11,19 +11,6 @@ const BuyPage = () => {
 
     const warningMessage = price >= 10000 ? 'Prices are high, are you sure that you want to buy?' : 'Prices are low,buy more!';
 
-    const handleDispatch = (element: any) => {
-        dispatch(addToHistory({
-            date: new Date(Date.now()).toLocaleDateString('en-GB', {
-                hour: "numeric",
-                minute: 'numeric',
-                second: "numeric"
-            }),
-            actionType: element.name
-        }))
-        dispatch(buy())
-    };
-
-
     return (
         <>
             <p>
@@ -33,7 +20,17 @@ const BuyPage = () => {
                 {warningMessage}
             </p>
             {/*@ts-ignore*/}
-            <Button name={'Purchased 1 Bitcoin'} label={'Buy 1 Bitcoin'} event={(e) => handleDispatch(e.target)}/>
+            <Button name={'Purchased 1 Bitcoin'} label={'Buy 1 Bitcoin'} event={(e) => batch(() => {
+                dispatch(addToHistory({
+                    date: new Date(Date.now()).toLocaleDateString('en-GB', {
+                        hour: "numeric",
+                        minute: 'numeric',
+                        second: "numeric"
+                    }),
+                    actionType: e.target.name
+                }))
+                dispatch(buy())
+            })}/>
         </>
     );
 };

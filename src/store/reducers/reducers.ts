@@ -1,4 +1,4 @@
-import {combineReducers, configureStore, createAction, createSlice} from "@reduxjs/toolkit";
+import {combineReducers, configureStore, createSlice} from "@reduxjs/toolkit";
 
 export const priceReducer = createSlice({
     name: 'price',
