@@ -45,7 +45,7 @@ const SellPage = () => {
                     }),
                     actionType: e.target.name
                 }))
-                dispatch(sell())
+                dispatch(sell(price))
             })}/>
         </>
     );

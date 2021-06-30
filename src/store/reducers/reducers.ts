@@ -28,11 +28,13 @@ export const cashReducer = createSlice({
         withdraw: state => {
             state.cashAmount -= 100
         },
-        buy: state => {
+        buy: (state, action) => {
+            state.cashAmount -= action.payload
             state.bitcoinAmount += 1
         },
-        sell: state => {
+        sell: (state, action) => {
             state.bitcoinAmount -= 1
+            state.cashAmount += action.payload
         }
     }
 })
