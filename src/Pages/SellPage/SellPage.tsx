@@ -35,7 +35,6 @@ const SellPage = () => {
             <p className='warning'>
                 {amountWarningMessage}
             </p>
-
             {/*@ts-ignore*/}
             <Button name={'Sold 1 Bitcoin'} disabled={disable} label={'Sell 1 Bitcoin'} event={(e) => batch(() => {
                 dispatch(addToHistory({
