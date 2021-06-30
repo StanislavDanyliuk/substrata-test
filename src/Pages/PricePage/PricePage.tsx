@@ -3,7 +3,8 @@ import Button from "../../Components/Common/Button";
 import {batch, RootStateOrAny, useDispatch, useSelector} from "react-redux";
 
 import './PricePage.css'
-import {addToHistory, decrement, increment} from "../../store/reducers/reducers";
+import {addToHistory} from "../../store/reducers/historyReducer";
+import {decrement, increment} from "../../store/reducers/priceReducer";
 
 const PricePage = () => {
     const [disable, setDisable] = useState(false)

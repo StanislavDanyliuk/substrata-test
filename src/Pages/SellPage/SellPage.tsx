@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import Button from "../../Components/Common/Button";
 import {batch, RootStateOrAny, useDispatch, useSelector} from "react-redux";
-import {addToHistory, sell} from "../../store/reducers/reducers";
 
 import './SellPage.css'
+import {addToHistory} from "../../store/reducers/historyReducer";
+import {sell} from "../../store/reducers/cashReducer";
 
 const SellPage = () => {
     const [disable, setDisable] = useState(false)

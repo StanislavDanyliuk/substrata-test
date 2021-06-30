@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import Button from "../../Components/Common/Button";
 import {batch, RootStateOrAny, useDispatch, useSelector} from "react-redux";
-import {addToHistory, deposit, withdraw} from "../../store/reducers/reducers";
+import Button from "../../Components/Common/Button";
 
+import {addToHistory} from "../../store/reducers/historyReducer";
+import {deposit, withdraw} from "../../store/reducers/cashReducer";
 import './WalletPage.css'
 
 const WalletPage = () => {
@@ -20,7 +21,6 @@ const WalletPage = () => {
             setDisable(false)
             setWarningMessage('')
         }
-
     }, [cashAmount])
 
 
